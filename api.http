@@ -9,7 +9,7 @@ Content-Type: application/json
 
 ### Lista candidatos
 
-GET http://localhost:8080/candidates?name=Joe Obama
+GET http://localhost:8080/candidates
 
 ### Recupera um candidato específico
 

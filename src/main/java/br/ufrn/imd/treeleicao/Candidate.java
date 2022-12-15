@@ -1,4 +1,4 @@
-package br.ufrn.imd.treeleicao.model;
+package br.ufrn.imd.treeleicao;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,17 +10,17 @@ import java.util.UUID;
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
     private String name;
 
     public Candidate() {
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
