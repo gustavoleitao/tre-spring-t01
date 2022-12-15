@@ -1,30 +1,3 @@
-### Adiciona candidato
+### Root
 
-POST http://localhost:8080/candidate
-Content-Type: application/json
-
-{
-  "name": "Joe Obama"
-}
-
-### Lista candidatos
-
-GET http://localhost:8080/candidates?name=Joe Obama
-
-### Recupera um candidato específico
-
-GET http://localhost:8080/candidate/1
-
-### Recupera um candidato específico
-
-GET http://localhost:8080/candidate/10
-
-### Atualiza um candidato específico
-
-PUT http://localhost:8080/candidate/1
-Content-Type: application/json
-
-{
-  "name": "Joe Biden"
-}
-
+GET http://localhost:8080/
