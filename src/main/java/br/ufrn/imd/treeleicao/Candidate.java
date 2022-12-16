@@ -1,9 +1,8 @@
 package br.ufrn.imd.treeleicao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -13,11 +12,18 @@ public class Candidate {
     private Long id;
     private String name;
 
+    @Temporal(value=TemporalType.DATE)
+    private Date dataValidade;
+
     public Candidate() {
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getDataValidade() {
+        return dataValidade;
     }
 
     public Long getId() {
