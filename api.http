@@ -25,6 +25,7 @@ PUT http://localhost:8080/candidate/1
 Content-Type: application/json
 
 {
-  "name": "Joe Biden"
+  "name": "Joe Biden",
+  "dataValidade": "2022-01-01"
 }
 

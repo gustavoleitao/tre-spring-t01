@@ -2,47 +2,43 @@ package br.ufrn.imd.treeleicao;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Collection;
 
 @RestController
 public class CandidateController {
 
-    private final CandidateRepository repository;
+    private final CandidateService service;
 
-    CandidateController(CandidateRepository repository) {
-        this.repository = repository;
+    CandidateController(CandidateService service) {
+        this.service = service;
     }
 
     @GetMapping("/candidates")
-    public List<Candidate> find(){
-        return repository.findAll();
+    public Collection<CandidateDTO> find(){
+        return service.all();
     }
 
     @PostMapping("/candidate")
-    Candidate newCandidate(@RequestBody Candidate newCandidate) {
-        return repository.save(newCandidate);
+    CandidateDTO newCandidate(@RequestBody CandidateDTO newCandidate) {
+        return service.saveOrUpdate(newCandidate);
     }
 
     @GetMapping("/candidate/{id}")
-    Candidate one(@PathVariable Long id){
-        return repository.findById(id).orElseThrow(() -> new CandidateNotFoundException(id));
+    CandidateDTO one(@PathVariable Long id){
+        return service.findById(id);
     }
 
     @PutMapping("/candidate/{id}")
-    Candidate update(@RequestBody Candidate newCandidate, @PathVariable Long id){
-        return repository.findById(id).map(candidate -> {
-            candidate.setName(newCandidate.getName());
-            return repository.save(candidate);
-        }).orElseGet(() -> {
-            newCandidate.setId(id);
-            return repository.save(newCandidate);
-        });
+    CandidateDTO update(@RequestBody CandidateDTO newCandidate, @PathVariable Long id){
+        newCandidate.setId(id);
+        return service.saveOrUpdate(newCandidate);
     }
 
     @DeleteMapping("/candidate/{id}")
     void deleteCandidate(@PathVariable Long id) {
-        repository.deleteById(id);
+        service.deleteById(id);
     }
 
 }
+
+
