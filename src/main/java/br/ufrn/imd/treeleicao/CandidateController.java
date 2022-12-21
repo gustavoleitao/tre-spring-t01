@@ -14,8 +14,6 @@ public class CandidateController {
         this.repository = repository;
     }
 
-    private final AtomicLong counter = new AtomicLong();
-
     @GetMapping("/candidates")
     public List<Candidate> find(){
         return repository.findAll();
