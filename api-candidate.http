@@ -1,0 +1,38 @@
+### Adiciona candidato
+
+POST http://localhost:8080/candidate
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvIiwiZXhwIjoxNjc0NzczNTcxLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdfQ.w46nfrGJQiTMwp0ebFvo-SHnQVPVzQKiEr3Xkcz1aO70-BfAWQ1K3AHbkGLC29JBZk3MPDB3FUxoRiw0KDD-Pw
+
+{
+  "name": "Joe Obama"
+}
+
+### Lista candidatos
+
+GET http://localhost:8080/candidates
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvIiwiZXhwIjoxNjc0NzczMTIzLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdfQ.oJKkwzR8RzPu-hb19yHXQIC_YSj5IU4hxAh8YVt0xWcqcWXGTqpO-KkizNvy-_JOTE27HxqcsUIf38KkQQhM2g
+
+### Recupera um candidato específico
+
+GET http://localhost:8080/candidate/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvIiwiZXhwIjoxNjc0NzQ2Njg0fQ.9S4gus9tTJ-wYVAXb__gwO8QFg2DB9F9i2R3l1e0s7QFAjCNol9oaVoKgz-TQkRW6OmzxKPtinCuSryk5lHkRg
+
+
+### Recupera um candidato específico
+
+GET http://localhost:8080/candidate/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvIiwiZXhwIjoxNjc0NzQ2Njg0fQ.9S4gus9tTJ-wYVAXb__gwO8QFg2DB9F9i2R3l1e0s7QFAjCNol9oaVoKgz-TQkRW6OmzxKPtinCuSryk5lHkRg
+
+
+### Atualiza um candidato específico
+
+PUT http://localhost:8080/candidate/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvIiwiZXhwIjoxNjc0NzQ2Njg0fQ.9S4gus9tTJ-wYVAXb__gwO8QFg2DB9F9i2R3l1e0s7QFAjCNol9oaVoKgz-TQkRW6OmzxKPtinCuSryk5lHkRg
+Content-Type: application/json
+
+{
+  "name": "Joe Biden",
+  "dataValidade": "2022-01-01"
+}
+

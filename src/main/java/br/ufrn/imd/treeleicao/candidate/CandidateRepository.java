@@ -1,4 +1,4 @@
-package br.ufrn.imd.treeleicao;
+package br.ufrn.imd.treeleicao.candidate;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
